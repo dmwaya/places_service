@@ -23,9 +23,10 @@ class PlacesService {
   String? get sessionToken => _sessionToken;
 
   /// Must initialize and pass in an API key.
-  void initialize({required String apiKey}) {
+  void initialize({required String apiKey, Map<String, String>? headers}) {
     _places = GoogleMapsPlaces(
       apiKey: apiKey,
+      apiHeaders: headers,
     );
   }
 
